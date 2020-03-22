@@ -7,6 +7,11 @@ const conn = mysql.createConnection({
     database: 'expressdb'
 });
 
+conn.connect((err)=>{
+    if(err){ throw err;}
+    console.log('Connected to db!')
+});
+
 let db = {
     getAll: () => {
         return new Promise( (resolve, reject) => {
